@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="movieYellow">#F9FF00</color>
     <color name="movieGrey">#F5F5F5</color>
+    <color name="movieBack">#545050</color>
 </resources>
