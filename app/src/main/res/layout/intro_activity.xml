@@ -52,6 +52,8 @@
         android:layout_height="51dp"
         android:layout_marginBottom="47dp"
         android:background="@drawable/button_background_yellow1"
+        android:clickable="true"
+        android:onClick="registerClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -76,6 +78,9 @@
         android:layout_height="51dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button_background_grey1"
+        android:clickable="true"
+
+        android:onClick="loginClick"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
