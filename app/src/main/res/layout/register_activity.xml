@@ -46,6 +46,8 @@
         android:inputType="textEmailAddress"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/movieBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -64,6 +66,8 @@
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/movieBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
@@ -81,6 +85,8 @@
         android:hint="Usuário"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/movieBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMatch2" />
@@ -99,6 +105,8 @@
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/movieBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
