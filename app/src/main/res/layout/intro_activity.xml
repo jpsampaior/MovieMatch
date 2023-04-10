@@ -69,7 +69,7 @@
 
             android:background="@drawable/button_background_grey1"
             android:clickable="true"
-            android:onClick="loginClick">
+            android:onClick="loginLoad">
 
             <TextView
                 android:id="@+id/tvLogin"
@@ -92,7 +92,7 @@
             android:layout_height="51dp"
             android:background="@drawable/button_background_yellow1"
             android:clickable="true"
-            android:onClick="registerClick">
+            android:onClick="registerLoad">
 
             <TextView
                 android:id="@+id/tvCadastre"
