@@ -48,7 +48,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/profileSample"
+        android:src="@drawable/profile_sample"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="1dp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
