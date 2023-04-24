@@ -46,12 +46,47 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="410dp"
+        android:layout_marginTop="50dp"
         android:paddingStart="60dp"
         android:paddingEnd="60dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/viewPager">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/movieBack"
+            android:paddingRight="30dp"
+            app:srcCompat="@drawable/ic_x" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/movieBack"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            app:srcCompat="@drawable/ic_check" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/movieBack"
+            android:paddingLeft="30dp"
+            app:srcCompat="@drawable/ic_heart" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
