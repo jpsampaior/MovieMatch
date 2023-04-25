@@ -10,6 +10,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
-
         viewPager2 = findViewById(R.id.viewPager);
 
         List<PosterItem> posterItems = new ArrayList<>();
