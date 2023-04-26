@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/viewPager">
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/movieBack"
@@ -72,7 +72,7 @@
             app:srcCompat="@drawable/ic_x" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/movieBack"
@@ -81,7 +81,7 @@
             app:srcCompat="@drawable/ic_check" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/btnHeart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/movieBack"
