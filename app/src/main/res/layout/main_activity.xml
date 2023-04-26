@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/movieBack">
+    android:background="@color/movieGrey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -22,7 +22,7 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/rowdies"
             android:text="MATCH"
-            android:textColor="@color/movieGrey"
+            android:textColor="@color/movieWhite"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
             android:id="@+id/btnX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/movieBack"
+            android:background="@color/movieGrey"
             android:paddingRight="30dp"
             app:srcCompat="@drawable/ic_x" />
 
@@ -75,7 +75,7 @@
             android:id="@+id/btnCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/movieBack"
+            android:background="@color/movieGrey"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             app:srcCompat="@drawable/ic_check" />
@@ -84,7 +84,7 @@
             android:id="@+id/btnHeart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/movieBack"
+            android:background="@color/movieGrey"
             android:paddingLeft="30dp"
             app:srcCompat="@drawable/ic_heart" />
     </LinearLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/movieBack">
+    android:background="@color/movieGrey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -22,7 +22,7 @@
             android:layout_marginTop="42dp"
             android:fontFamily="@font/rowdies"
             android:text="MATCH"
-            android:textColor="@color/movieGrey"
+            android:textColor="@color/movieWhite"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/movieBack" />
+                android:textColorHint="@color/movieGrey" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"
@@ -88,7 +88,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/movieBack" />
+                android:textColorHint="@color/movieGrey" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

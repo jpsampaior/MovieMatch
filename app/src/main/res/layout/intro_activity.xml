@@ -22,7 +22,7 @@
             android:layout_marginTop="42dp"
             android:fontFamily="@font/rowdies"
             android:text="MATCH"
-            android:textColor="@color/movieGrey"
+            android:textColor="@color/movieWhite"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
             android:fontFamily="@font/inter"
             android:text="Dê match com os seus amigos e familiares, escolham filmes para assistir juntos e divirtam-se."
             android:textAlignment="center"
-            android:textColor="@color/movieGrey"
+            android:textColor="@color/movieWhite"
             android:textSize="16sp"
             android:gravity="bottom|center"/>
 
