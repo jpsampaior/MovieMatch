@@ -52,14 +52,15 @@
 
         <TextView
             android:id="@+id/tvIntroText"
-            android:layout_width="301dp"
-            android:layout_height="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/inter"
             android:text="Dê match com os seus amigos e familiares, escolham filmes para assistir juntos e divirtam-se."
             android:textAlignment="center"
             android:textColor="@color/movieGrey"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:gravity="bottom|center"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
