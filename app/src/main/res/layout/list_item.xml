@@ -150,7 +150,7 @@
             android:layout_height="150dp"
             android:layout_marginStart="18dp"
 
-            android:src="@drawable/sampleTheWolfOfWallStreet">
+            android:src="@drawable/sampleTitanic">
 
         </ImageView>
         <ImageView
@@ -179,13 +179,13 @@
             android:layout_height="150dp"
             android:layout_marginStart="18dp"
 
-            android:src="@drawable/sampleTheWolfOfWallStreet">
+            android:src="@drawable/sampleTitanic">
 
         </ImageView>
         <ImageView
             android:layout_width="125dp"
             android:layout_height="150dp"
-
+            android:id="@+id/sampleJoker"
             android:src="@drawable/sampleJoker">
 
         </ImageView>

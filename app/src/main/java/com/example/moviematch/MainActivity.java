@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -18,10 +19,12 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+    //ActivityMainBinding binding;
     ViewPager2 viewPager2;
 
 
     protected void onCreate(Bundle savedInstanceState) {
+        //binding = ActivityMainBinding;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
         viewPager2 = findViewById(R.id.viewPager);
@@ -50,5 +53,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager2.setPageTransformer(compositePageTransformer);
+        /*int[] image_id = {
+                R.drawable.sample1,
+                R.drawable.sample3,
+                R.drawable.sample2,
+                R.drawable.sample4,
+                R.drawable.sampleBarbie,
+                R.drawable.sampleFightClub,
+                R.drawable.sampleJoker,
+                R.drawable.sampleMadagascarr,
+                R.drawable.sampleSoul,
+                R.drawable.sampleTitanic
+
+        };*/
+
     }
+
+
 }
