@@ -107,7 +107,7 @@
             android:layout_width="125dp"
             android:layout_height="150dp"
 
-            android:src="@drawable/sampleFightClub">
+            android:src="@drawable/sample_fightclub">
 
         </ImageView>
     </LinearLayout>
@@ -128,7 +128,7 @@
             android:layout_width="125dp"
             android:layout_height="150dp"
 
-            android:src="@drawable/sampleBarbie">
+            android:src="@drawable/sample_barbie">
 
         </ImageView>
 
@@ -136,36 +136,7 @@
             android:layout_width="125dp"
             android:layout_height="150dp"
 
-            android:src="@drawable/sampleMadagascarr">
-
-        </ImageView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
-
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="18dp"
-
-            android:src="@drawable/sampleTitanic">
-
-        </ImageView>
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="150dp"
-
-            android:src="@drawable/sampleJoker">
-
-        </ImageView>
-
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="150dp"
-
-            android:src="@drawable/sampleSoul">
+            android:src="@drawable/sample_madagascarr">
 
         </ImageView>
     </LinearLayout>
@@ -179,14 +150,43 @@
             android:layout_height="150dp"
             android:layout_marginStart="18dp"
 
-            android:src="@drawable/sampleTitanic">
+            android:src="@drawable/sample_titanic">
+
+        </ImageView>
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="150dp"
+
+            android:src="@drawable/sample_joker">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="150dp"
+
+            android:src="@drawable/sample_soul">
+
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="18dp"
+
+            android:src="@drawable/sample_titanic">
 
         </ImageView>
         <ImageView
             android:layout_width="125dp"
             android:layout_height="150dp"
             android:id="@+id/sampleJoker"
-            android:src="@drawable/sampleJoker">
+            android:src="@drawable/sample_joker">
 
         </ImageView>
 
@@ -194,7 +194,7 @@
             android:layout_width="125dp"
             android:layout_height="150dp"
 
-            android:src="@drawable/sampleSoul">
+            android:src="@drawable/sample_soul">
 
         </ImageView>
     </LinearLayout>
