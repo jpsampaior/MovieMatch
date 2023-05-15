@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<ripple android:color="@color/movieGrey" xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="50dp"/>
-            <solid android:color="#F9FF00"/>
+            <solid android:color="@color/movieYellow"/>
         </shape>
     </item>
-</selector>
+</ripple>
