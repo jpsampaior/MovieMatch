@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btnHome:
                         return true;
                     case R.id.btnMovieList:
-                        startActivity(new Intent(getApplicationContext(),ListViewActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(),IntroActivity.class));
                         return true;
                 }
                 return false;
