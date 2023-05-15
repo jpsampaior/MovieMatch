@@ -14,17 +14,25 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
-    List<PosterItem> posterItems;
 
     protected void onCreate(Bundle savedInstanceState) {
+        //binding = ActivityMainBinding;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
-
         viewPager2 = findViewById(R.id.viewPager);
+
+        List<PosterItem> posterItems = new ArrayList<>();
+
+        posterItems.add(new PosterItem(R.drawable.sample1));
+        posterItems.add(new PosterItem(R.drawable.sample2));
+        posterItems.add(new PosterItem(R.drawable.sample3));
+        posterItems.add(new PosterItem(R.drawable.sample4));
+
         viewPager2.setAdapter(new MoviePosterAdapter(posterItems,viewPager2));
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
@@ -43,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2.setPageTransformer(compositePageTransformer);
 
+        // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigationView);
+
+        // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.btnHome);
+
+        // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
