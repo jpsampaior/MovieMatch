@@ -1,8 +1,10 @@
-package com.example.moviematch;
+package com.example.moviematch.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.moviematch.R;
 
 public class RegisterActivity extends AppCompatActivity {
     @Override

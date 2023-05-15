@@ -1,10 +1,12 @@
-package com.example.moviematch;
+package com.example.moviematch.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.moviematch.R;
 
 public class LoginActivity extends AppCompatActivity {
     @Override
