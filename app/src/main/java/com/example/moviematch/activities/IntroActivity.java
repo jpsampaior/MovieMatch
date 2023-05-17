@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.moviematch.JsonConnection;
 import com.example.moviematch.R;
+import com.example.moviematch.TheMovieDBAPI;
 import com.example.moviematch.models.Movie;
 
 import java.util.List;
@@ -21,16 +22,16 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity);
 
-        List<Movie> lista;
+        List<Movie> lista = null;
+
+        TheMovieDBAPI api = new TheMovieDBAPI();
         try {
-            Toast.makeText(this, new JsonConnection().execute().get(), Toast.LENGTH_LONG).show();
-        } catch (ExecutionException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            lista = api.getPopularMovies();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-
+        Toast.makeText(this,lista.get(0).getTitle(),Toast.LENGTH_LONG);
     }
 
     public void loginLoad(View view) {
