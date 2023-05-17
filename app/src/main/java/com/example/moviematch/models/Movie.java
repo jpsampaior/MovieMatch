@@ -1,12 +1,14 @@
 package com.example.moviematch.models;
 
+import android.net.Uri;
+
 public class Movie {
     private String title;
-    private String posterPath;
+    private Uri posterPath;
     private String overview;
     private String releaseDate;
 
-    public Movie(String title, String posterPath, String overview, String releaseDate) {
+    public Movie(String title, Uri posterPath, String overview, String releaseDate) {
         this.title = title;
         this.posterPath = posterPath;
         this.overview = overview;
@@ -17,7 +19,7 @@ public class Movie {
         return title;
     }
 
-    public String getPosterPath() {
+    public Uri getPosterPath() {
         return posterPath;
     }
 

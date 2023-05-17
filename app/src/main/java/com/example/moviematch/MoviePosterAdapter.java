@@ -53,6 +53,7 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
 
         void setImage(PosterItem posterItem) {
             imageView.setImageResource(posterItem.getImage());
+
         }
     }
 }

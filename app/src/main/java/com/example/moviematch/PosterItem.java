@@ -1,5 +1,7 @@
 package com.example.moviematch;
 
+import android.net.Uri;
+
 public class PosterItem {
     private int image;
 
