@@ -2,16 +2,13 @@ package com.example.moviematch.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.moviematch.JsonConnection;
 import com.example.moviematch.R;
-import com.example.moviematch.TheMovieDBAPI;
+import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
 
 import java.util.List;
@@ -24,14 +21,15 @@ public class IntroActivity extends AppCompatActivity {
 
         List<Movie> lista = null;
 
-        TheMovieDBAPI api = new TheMovieDBAPI();
         try {
-            lista = api.getPopularMovies();
-        } catch (Exception e) {
-            e.printStackTrace();
+            lista = new TMDBconnection().execute().get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
-        Toast.makeText(this,lista.get(0).getTitle(),Toast.LENGTH_LONG);
+        for (Movie movie : lista) {
+            Log.d("filmes2",movie.getTitle());
+        }
     }
 
     public void loginLoad(View view) {

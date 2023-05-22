@@ -12,16 +12,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.moviematch.JsonConnection;
 import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.PosterItem;
 import com.example.moviematch.R;
-import com.example.moviematch.models.Movie;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
