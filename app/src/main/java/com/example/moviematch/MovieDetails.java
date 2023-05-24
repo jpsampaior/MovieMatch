@@ -8,7 +8,7 @@ public class MovieDetails {
         this.sinopse = sinopse;
         this.duration = duration;
         this.image_id = image_id;
-
+//
     }
 
 }
