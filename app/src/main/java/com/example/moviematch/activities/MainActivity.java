@@ -13,11 +13,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.R;
 import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
+import com.example.moviematch.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -27,10 +29,12 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
     List<Movie> lista;
+    User user;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
+        user = new User("jpsampaior");
 
         viewPager2 = findViewById(R.id.viewPager);
 
@@ -40,11 +44,8 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        for (Movie movie : lista) {
-            Log.d("filmes2",movie.getPosterPath());
-        }
-
         viewPagerCfg();
+
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.btnHome);
@@ -80,6 +81,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        viewPager2.bringChildToFront(viewPager2.getChildAt(1));
+
         viewPager2.setPageTransformer(compositePageTransformer);
+    }
+    
+    public void onPreferenceClick(View view) {
+        Movie currentMovie = lista.get(viewPager2.getCurrentItem());
+
+        switch (view.getId()) {
+            case R.id.btnHeart:
+                user.addToWatchList(currentMovie);
+                break;
+            case R.id.btnCheck:
+                user.addWatchedMovie(currentMovie);
+                break;
+            case R.id.btnX:
+                user.addToAvoidList(currentMovie);
+                break;
+        }
+
+        if (viewPager2.getCurrentItem() != lista.size()) {
+            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+        }
     }
 }
