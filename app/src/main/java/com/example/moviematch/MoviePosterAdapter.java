@@ -10,7 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.moviematch.apiConnection.imageBitmapTask;
 import com.example.moviematch.models.Movie;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.List;
@@ -55,7 +57,7 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
         }
 
         void setImage(Movie movie) {
-            imageView.setImageBitmap(movie.getImageBitmap());
+            new imageBitmapTask(imageView).execute(movie.getPosterPath());
         }
     }
 }
