@@ -31,7 +31,6 @@ public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
                 .url(url)
                 .build();
 
-
         try {
             json = null;
             Response response = client.newCall(request).execute();

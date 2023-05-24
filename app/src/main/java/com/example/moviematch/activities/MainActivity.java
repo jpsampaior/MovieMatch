@@ -7,22 +7,26 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.moviematch.MoviePosterAdapter;
-import com.example.moviematch.PosterItem;
 import com.example.moviematch.R;
+import com.example.moviematch.apiConnection.TMDBconnection;
+import com.example.moviematch.models.Movie;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
-    List<PosterItem> posterItems;
+    List<Movie> lista;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2 = findViewById(R.id.viewPager);
 
-        posterItems = new ArrayList<>();
-        posterItems.add(new PosterItem(R.drawable.sample1));
-        posterItems.add(new PosterItem(R.drawable.sample2));
-        posterItems.add(new PosterItem(R.drawable.sample3));
-        posterItems.add(new PosterItem(R.drawable.sample4));
+        try {
+            lista = new TMDBconnection().execute().get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        for (Movie movie : lista) {
+            Log.d("filmes2",movie.getPosterPath());
+        }
 
         viewPagerCfg();
 
@@ -56,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewPagerCfg() {
-        viewPager2.setAdapter(new MoviePosterAdapter(posterItems,viewPager2));
+        viewPager2.setAdapter(new MoviePosterAdapter(lista,viewPager2));
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
         viewPager2.setOffscreenPageLimit(3);

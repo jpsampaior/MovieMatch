@@ -18,18 +18,6 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity);
-
-        List<Movie> lista = null;
-
-        try {
-            lista = new TMDBconnection().execute().get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        for (Movie movie : lista) {
-            Log.d("filmes2",movie.getTitle());
-        }
     }
 
     public void loginLoad(View view) {
