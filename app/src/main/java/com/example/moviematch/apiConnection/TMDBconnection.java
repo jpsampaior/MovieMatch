@@ -19,30 +19,33 @@ public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
     private OkHttpClient client;
     private Gson gson;
     private String json;
-
+    private int page;
+    private MovieListResponse movieListResponse;
     public TMDBconnection() {
         this.client = new OkHttpClient();
         this.gson = new Gson();
+        this.page = 0;
+        this.movieListResponse = new MovieListResponse();
     }
 
     protected List<Movie> doInBackground(Void... voids) {
-        String url = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY;
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+        while(page<5) {
+            String url = "https://api.themoviedb.org/3/discover/movie?api_key="+API_KEY+"&with_genres=28&page="+(++page);
+            Request request = new Request.Builder()
+                    .url(url)
+                    .build();
 
-        try {
-            json = null;
-            Response response = client.newCall(request).execute();
-            json = response.body().string();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                json = null;
+                Response response = client.newCall(request).execute();
+                json = response.body().string();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            MovieListResponse list = gson.fromJson(json, MovieListResponse.class);
+            movieListResponse.setNewMoviesToList(list.getResults());
         }
-
-        //Log.d("filmes", )
-
-        // Fazer a conversão do JSON para uma lista de objetos Java
-        MovieListResponse movieListResponse = gson.fromJson(json, MovieListResponse.class);
 
         return movieListResponse.getResults();
     }

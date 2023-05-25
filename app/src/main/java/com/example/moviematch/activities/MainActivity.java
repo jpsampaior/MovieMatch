@@ -23,6 +23,7 @@ import com.example.moviematch.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
     List<Movie> lista;
     User user;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             lista = new TMDBconnection().execute().get();
+            Collections.shuffle(lista);
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
         viewPagerCfg();
-
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.btnHome);
@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        Log.d("watchList", currentMovie.getTitle());
         if (viewPager2.getCurrentItem() != lista.size()) {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
         }
