@@ -28,7 +28,7 @@ public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
     }
 
     protected List<Movie> doInBackground(Void... voids) {
-        while(page<5) {
+        while(page<3) {
             String url = "https://api.themoviedb.org/3/discover/movie?api_key="+API_KEY+"&with_genres=28&page="+(++page);
             Request request = new Request.Builder()
                     .url(url)

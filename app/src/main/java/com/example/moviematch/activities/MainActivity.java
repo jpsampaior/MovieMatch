@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         user.getRandomList().remove(currentMovie);
         confirmationEffect();
 
-        Log.d("watchList", currentMovie.getTitle());
         if (viewPager2.getCurrentItem() != user.getRandomList().size()) {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
         }
