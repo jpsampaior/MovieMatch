@@ -15,6 +15,7 @@ import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.R;
 import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
+import com.example.moviematch.models.User2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Collections;
@@ -25,9 +26,6 @@ public class ListActivity extends AppCompatActivity {
     ViewPager2 vpWatchList;
     ViewPager2 vpWatchedList;
     ViewPager2 vpAvoidList;
-    List<Movie> lista1;
-    List<Movie> lista2;
-    List<Movie> lista3;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,16 +35,10 @@ public class ListActivity extends AppCompatActivity {
         vpWatchedList = findViewById(R.id.vpWatchedList);
         vpAvoidList = findViewById(R.id.vpAvoidList);
 
-        try {
-            lista1 = new TMDBconnection().execute().get();
-            Collections.shuffle(lista1);
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        viewPagerCfg(vpWatchList,lista1);
-        viewPagerCfg(vpWatchedList,lista1);
-        viewPagerCfg(vpAvoidList,lista1);
+        User2 user = User2.getInstance();
+        viewPagerCfg(vpWatchList,user.getWatchList());
+        viewPagerCfg(vpWatchedList,user.getWatchedMovies());
+        viewPagerCfg(vpAvoidList,user.getAvoidList());
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.btnMovieList);
