@@ -13,14 +13,11 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.R;
-import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
-import com.example.moviematch.models.User2;
+import com.example.moviematch.models.UserSingleton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class ListActivity extends AppCompatActivity {
     ViewPager2 vpWatchList;
@@ -35,7 +32,7 @@ public class ListActivity extends AppCompatActivity {
         vpWatchedList = findViewById(R.id.vpWatchedList);
         vpAvoidList = findViewById(R.id.vpAvoidList);
 
-        User2 user = User2.getInstance();
+        UserSingleton user = UserSingleton.getInstance();
         viewPagerCfg(vpWatchList,user.getWatchList());
         viewPagerCfg(vpWatchedList,user.getWatchedMovies());
         viewPagerCfg(vpAvoidList,user.getAvoidList());

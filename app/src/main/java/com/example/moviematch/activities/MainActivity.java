@@ -18,46 +18,28 @@ import android.widget.TextView;
 import com.example.moviematch.FadeEffect;
 import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.R;
-import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
-import com.example.moviematch.models.User;
-import com.example.moviematch.models.User2;
+import com.example.moviematch.models.UserSingleton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
-    List<Movie> lista;
-    List<Movie> removeList;
-    User2 user;
+    UserSingleton user;
 
     TextView tvBtnClickConfirmation;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        user = User2.getInstance();
+        user = UserSingleton.getInstance();
 
         tvBtnClickConfirmation = findViewById(R.id.tvBtnClickConfirmation);
         viewPager2 = findViewById(R.id.viewPager);
 
-        try {
-            lista = new TMDBconnection().execute().get();
-            removeList = user.getAvoidList();
-            removeList.addAll(user.getWatchList());
-            removeList.addAll(user.getWatchedMovies());
-            lista.removeAll(removeList);
-            Collections.shuffle(lista);
-
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Collections.shuffle(user.getRandomList());
 
         viewPagerCfg();
 
@@ -79,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewPagerCfg() {
-        viewPager2.setAdapter(new MoviePosterAdapter(lista,viewPager2));
+        viewPager2.setAdapter(new MoviePosterAdapter(user.getRandomList(),viewPager2));
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
         viewPager2.setOffscreenPageLimit(3);
@@ -101,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
     
     public void onPreferenceClick(View view) {
-        Movie currentMovie = lista.get(viewPager2.getCurrentItem());
+        Movie currentMovie = user.getRandomList().get(viewPager2.getCurrentItem());
 
         switch (view.getId()) {
             case R.id.btnHeart:
@@ -118,10 +100,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        user.getRandomList().remove(currentMovie);
         confirmationEffect();
 
         Log.d("watchList", currentMovie.getTitle());
-        if (viewPager2.getCurrentItem() != lista.size()) {
+        if (viewPager2.getCurrentItem() != user.getRandomList().size()) {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
         }
     }

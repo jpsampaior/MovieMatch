@@ -3,11 +3,20 @@ package com.example.moviematch.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User2 {
-    private static User2 instance;
+public class UserSingleton {
+    private static UserSingleton instance;
     List<Movie> watchList;
     List<Movie> watchedMovies;
     List<Movie> avoidList;
+    List<Movie> randomList;
+
+    public List<Movie> getRandomList() {
+        return randomList;
+    }
+
+    public void setRandomList(List<Movie> randomList) {
+        this.randomList = randomList;
+    }
 
     public void addToWatchList(Movie movie) {
         watchList.add(movie);
@@ -45,15 +54,15 @@ public class User2 {
         this.avoidList = avoidList;
     }
 
-    private User2() {
+    private UserSingleton() {
         watchList = new ArrayList<>();
         watchedMovies = new ArrayList<>();
         avoidList = new ArrayList<>();
     }
 
-    public static synchronized User2 getInstance() {
+    public static synchronized UserSingleton getInstance() {
         if (instance == null) {
-            instance = new User2();
+            instance = new UserSingleton();
         }
         return instance;
     }
