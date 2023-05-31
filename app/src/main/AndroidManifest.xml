@@ -13,7 +13,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".activities.ListActivity"
+            android:name=".activities.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         <activity android:name=".activities.LoginActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
         <activity android:name=".activities.MainActivity"/>
-        <activity android:name=".activities.IntroActivity"/>
+        <activity android:name=".activities.ListActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

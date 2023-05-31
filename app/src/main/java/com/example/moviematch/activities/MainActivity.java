@@ -21,22 +21,28 @@ import com.example.moviematch.R;
 import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
 import com.example.moviematch.models.User;
+import com.example.moviematch.models.User2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
     List<Movie> lista;
     List<Movie> removeList;
-    User user;
+    User2 user;
+
     TextView tvBtnClickConfirmation;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        user = new User("jpsampaior");
+
+        user = User2.getInstance();
 
         tvBtnClickConfirmation = findViewById(R.id.tvBtnClickConfirmation);
         viewPager2 = findViewById(R.id.viewPager);

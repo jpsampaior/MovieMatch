@@ -38,7 +38,8 @@
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -51,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etUsername"
             android:layout_width="301dp"
             android:layout_height="51dp"
             android:background="@drawable/custom_input"
@@ -66,7 +67,7 @@
             android:textColorHint="@color/movieGrey" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/etEmail"
             android:layout_width="301dp"
             android:layout_height="51dp"
             android:layout_marginTop="19dp"
@@ -83,7 +84,7 @@
             android:textColorHint="@color/movieGrey" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/etPassword"
             android:layout_width="301dp"
             android:layout_height="51dp"
             android:layout_marginTop="19dp"
@@ -100,7 +101,7 @@
             android:textColorHint="@color/movieGrey" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/etPasswordConfirmation"
             android:layout_width="301dp"
             android:layout_height="51dp"
             android:layout_marginTop="19dp"
