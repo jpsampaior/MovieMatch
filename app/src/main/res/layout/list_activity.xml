@@ -11,6 +11,70 @@
         android:layout_height="match_parent"
         android:background="@color/movieGrey">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:text="Filmes para assistir"
+                android:textColor="@color/movieYellow"
+                android:textSize="18dp"
+                android:fontFamily="@font/inter_bold"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpWatchList"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="5dp"
+                android:paddingEnd="296dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:text="Filmes assistidos"
+                android:textColor="@color/movieYellow"
+                android:textSize="18dp"
+                android:fontFamily="@font/inter_bold"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpWatchedList"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="5dp"
+                android:paddingEnd="296dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:text="Filmes não desejados"
+                android:textColor="@color/movieYellow"
+                android:textSize="18dp"
+                android:fontFamily="@font/inter_bold"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpAvoidList"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="5dp"
+                android:paddingEnd="296dp"/>
+        </LinearLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
             android:layout_width="wrap_content"
@@ -58,71 +122,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout4" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5">
-
-            <TextView
-                android:id="@+id/tvBtnClickConfirmation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:alpha="0"
-                android:fontFamily="@font/inter_bold"
-                android:text="Filme adicionado à lista!"
-                android:textSize="16sp" />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="410dp"
-                android:paddingStart="60dp"
-                android:paddingEnd="60dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/btnX"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/movieGrey"
-                    android:onClick="onPreferenceClick"
-                    android:paddingRight="30dp"
-                    app:srcCompat="@drawable/ic_x" />
-
-                <ImageButton
-                    android:id="@+id/btnCheck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/movieGrey"
-                    android:onClick="onPreferenceClick"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    app:srcCompat="@drawable/ic_check" />
-
-                <ImageButton
-                    android:id="@+id/btnHeart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/movieGrey"
-                    android:onClick="onPreferenceClick"
-                    android:paddingLeft="30dp"
-                    app:srcCompat="@drawable/ic_heart" />
-            </LinearLayout>
-
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

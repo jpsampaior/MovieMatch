@@ -14,7 +14,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.moviematch.FadeEffect;
 import com.example.moviematch.MoviePosterAdapter;
@@ -23,7 +22,6 @@ import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
 import com.example.moviematch.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.squareup.picasso.Picasso;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvBtnClickConfirmation;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main2);
+        setContentView(R.layout.main_activity);
         user = new User("jpsampaior");
 
         tvBtnClickConfirmation = findViewById(R.id.tvBtnClickConfirmation);
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btnHome:
                         return true;
                     case R.id.btnMovieList:
-                        startActivity(new Intent(getApplicationContext(),IntroActivity.class));
+                        startActivity(new Intent(getApplicationContext(),ListActivity.class));
                         return true;
                 }
                 return false;
