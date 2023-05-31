@@ -27,4 +27,20 @@ public class User {
     public void addToAvoidList(Movie movie) {
         avoidList.add(movie);
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public List<Movie> getWatchList() {
+        return watchList;
+    }
+
+    public List<Movie> getWatchedMovies() {
+        return watchedMovies;
+    }
+
+    public List<Movie> getAvoidList() {
+        return avoidList;
+    }
 }
