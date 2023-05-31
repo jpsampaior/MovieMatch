@@ -1,7 +1,6 @@
 package com.example.moviematch.apiConnection;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.example.moviematch.models.Movie;
 import com.example.moviematch.models.MovieListResponse;

@@ -1,6 +1,5 @@
 package com.example.moviematch;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.moviematch.apiConnection.imageBitmapTask;
 import com.example.moviematch.models.Movie;
-import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.util.List;
 
 public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.MoviePosterAdapterHolder> {

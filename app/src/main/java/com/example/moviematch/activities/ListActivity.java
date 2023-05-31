@@ -3,7 +3,6 @@ package com.example.moviematch.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import com.example.moviematch.MoviePosterAdapter;
 import com.example.moviematch.R;
 import com.example.moviematch.apiConnection.TMDBconnection;
 import com.example.moviematch.models.Movie;
-import com.example.moviematch.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Collections;
