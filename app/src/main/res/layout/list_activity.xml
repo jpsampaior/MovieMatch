@@ -34,7 +34,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vpWatchList"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="170dp"
                 android:layout_marginBottom="5dp"
                 android:paddingEnd="296dp">
             </androidx.viewpager2.widget.ViewPager2>
@@ -53,7 +53,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vpWatchedList"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="170dp"
                 android:layout_marginBottom="5dp"
                 android:paddingEnd="296dp"/>
 
@@ -71,7 +71,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vpAvoidList"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="170dp"
                 android:layout_marginBottom="5dp"
                 android:paddingEnd="296dp"/>
         </LinearLayout>

@@ -35,11 +35,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
         user = UserSingleton.getInstance();
+        Collections.shuffle(user.getRandomList());
 
         tvBtnClickConfirmation = findViewById(R.id.tvBtnClickConfirmation);
         viewPager2 = findViewById(R.id.viewPager);
-
-        Collections.shuffle(user.getRandomList());
 
         viewPagerCfg();
 
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager2.bringChildToFront(viewPager2.getChildAt(1));
-
         viewPager2.setPageTransformer(compositePageTransformer);
     }
     
@@ -100,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        user.getRandomList().remove(currentMovie);
         confirmationEffect();
 
         if (viewPager2.getCurrentItem() != user.getRandomList().size()) {
