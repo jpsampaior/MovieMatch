@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.moviematch.apiConnection.imageBitmapTask;
 import com.example.moviematch.models.Movie;
 
 import java.util.List;
@@ -37,7 +36,7 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MoviePosterAdapterHolder holder, int position) {
-        holder.setImage(moviesList.get(position));
+        holder.imageView.setImageBitmap(moviesList.get(position).getImg_bitmap());
     }
 
     @Override
@@ -51,10 +50,6 @@ public class MoviePosterAdapter extends RecyclerView.Adapter<MoviePosterAdapter.
         MoviePosterAdapterHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.poster);
-        }
-
-        void setImage(Movie movie) {
-            new imageBitmapTask(imageView).execute(movie.getPosterPath());
         }
     }
 }

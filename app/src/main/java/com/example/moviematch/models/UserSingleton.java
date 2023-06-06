@@ -2,6 +2,7 @@ package com.example.moviematch.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class UserSingleton {
     private static UserSingleton instance;
@@ -14,7 +15,7 @@ public class UserSingleton {
         return randomList;
     }
 
-    public void setRandomList(List<Movie> randomList) {
+    public void setRandomList(List<Movie> randomList) throws ExecutionException, InterruptedException {
         this.randomList = randomList;
     }
 

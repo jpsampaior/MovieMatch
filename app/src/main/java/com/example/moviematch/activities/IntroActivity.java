@@ -8,23 +8,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.moviematch.R;
 import com.example.moviematch.apiConnection.TMDBconnection;
+import com.example.moviematch.models.Movie;
 import com.example.moviematch.models.UserSingleton;
 
-import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
 public class IntroActivity extends AppCompatActivity {
     UserSingleton user;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity);
         user = UserSingleton.getInstance();
 
-
         try {
             user.setRandomList(new TMDBconnection().execute().get());
+
+            for(Movie movie : user.getRandomList()) {
+                movie.setImg_bitmap();
+            }
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }

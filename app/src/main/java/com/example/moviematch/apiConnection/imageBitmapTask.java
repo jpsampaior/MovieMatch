@@ -4,16 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ImageView;
 
 import java.io.InputStream;
 
 public class imageBitmapTask extends AsyncTask<String, Void, Bitmap> {
-    ImageView imageView;
-
-    public imageBitmapTask(ImageView imageView) {
-        this.imageView = imageView;
-    }
 
     protected Bitmap doInBackground(String ... urls) {
         String urlDisplay = urls[0];
@@ -26,9 +20,5 @@ public class imageBitmapTask extends AsyncTask<String, Void, Bitmap> {
             e.printStackTrace();
         }
         return bitmap;
-    }
-
-    protected void onPostExecute(Bitmap result) {
-        imageView.setImageBitmap(result);
     }
 }
