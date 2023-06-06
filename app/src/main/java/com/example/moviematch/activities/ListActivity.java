@@ -69,4 +69,9 @@ public class ListActivity extends AppCompatActivity {
         vp.bringChildToFront(vp.getChildAt(1));
         vp.setPageTransformer(compositePageTransformer);
     }
+
+    public void onProfileClick(View view) {
+        Intent ScreenChange = new Intent(this, ProfileActivity.class);
+        startActivity(ScreenChange);
+    }
 }

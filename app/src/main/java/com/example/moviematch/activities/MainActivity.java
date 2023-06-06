@@ -109,4 +109,9 @@ public class MainActivity extends AppCompatActivity {
         FadeEffect.fadeIn(tvBtnClickConfirmation, 1000);
         FadeEffect.fadeOut(tvBtnClickConfirmation, 1000);
     }
+
+    public void onProfileClick(View view) {
+        Intent ScreenChange = new Intent(this, ProfileActivity.class);
+        startActivity(ScreenChange);
+    }
 }

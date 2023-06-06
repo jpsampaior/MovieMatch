@@ -117,6 +117,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="25dp"
+            android:onClick="onProfileClick"
             android:src="@drawable/profile_sample"
             app:civ_border_color="@color/white"
             app:civ_border_width="1dp"
