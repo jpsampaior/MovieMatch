@@ -12,6 +12,8 @@ public class Movie {
     private String poster_path;
     private String overview;
     private String release_date;
+    private int runtime;
+    private int id;
     private Bitmap img_bitmap;
 
     public String getTitle() {
@@ -26,6 +28,8 @@ public class Movie {
         return overview;
     }
 
+    public int getId() {return id;}
+
     public String getReleaseDate() {
         return release_date;
     }
@@ -33,6 +37,8 @@ public class Movie {
     public Bitmap getImg_bitmap() {
         return img_bitmap;
     }
+
+    public int getRuntime() {return runtime;}
 
     public void setImg_bitmap() throws ExecutionException, InterruptedException {
         this.img_bitmap = new imageBitmapTask().execute(getPosterPath()).get();

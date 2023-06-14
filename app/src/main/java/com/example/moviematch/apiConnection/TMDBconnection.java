@@ -7,6 +7,7 @@ import com.example.moviematch.models.MovieListResponse;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -28,6 +29,8 @@ public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
     }
 
     protected List<Movie> doInBackground(Void... voids) {
+        List<Movie> listaFinal = new ArrayList<>();
+
         while(page<2) {
             String url = "https://api.themoviedb.org/3/discover/movie?api_key="+API_KEY+"&with_genres=28&page="+(++page);
             Request request = new Request.Builder()
@@ -43,9 +46,28 @@ public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
             }
 
             MovieListResponse list = gson.fromJson(json, MovieListResponse.class);
-            movieListResponse.setNewMoviesToList(list.getResults());
+
+
+
+            for(Movie movie : list.getResults()) {
+                url = "https://api.themoviedb.org/3/movie/"+movie.getId()+"?api_key="+API_KEY;
+                request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                try {
+                    json = null;
+                    Response response = client.newCall(request).execute();
+                    json = response.body().string();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                listaFinal.add(gson.fromJson(json, Movie.class));
+            }
+
         }
 
-        return movieListResponse.getResults();
+        return listaFinal;
     }
 }

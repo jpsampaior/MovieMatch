@@ -86,19 +86,23 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.btnHeart:
                 user.addToWatchList(currentMovie);
+                tvBtnClickConfirmation.setText(R.string.watchlist_message);
                 tvBtnClickConfirmation.setTextColor(getResources().getColor(R.color.red));
                 break;
             case R.id.btnCheck:
                 user.addWatchedMovie(currentMovie);
+                tvBtnClickConfirmation.setText(R.string.watchedlist_message);
                 tvBtnClickConfirmation.setTextColor(getResources().getColor(R.color.limeGreen));
                 break;
             case R.id.btnX:
                 user.addToAvoidList(currentMovie);
+                tvBtnClickConfirmation.setText(R.string.avoidlist_message);
                 tvBtnClickConfirmation.setTextColor(getResources().getColor(R.color.movieWhite));
                 break;
         }
 
         confirmationEffect();
+        Log.d("abcdef",Integer.toString(currentMovie.getRuntime()));
 
         if (viewPager2.getCurrentItem() != user.getRandomList().size()) {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
