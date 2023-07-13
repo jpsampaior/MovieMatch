@@ -15,7 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class TMDBconnection extends AsyncTask<Void, Void, List<Movie>> {
-    private static final String API_KEY = "2f3597a16a6d886246818433956047aa";
+    private static final String API_KEY = "";
     private OkHttpClient client;
     private Gson gson;
     private String json;
